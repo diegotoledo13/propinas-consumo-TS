@@ -6,7 +6,7 @@ import { menuItems } from "./data/db"
 import useOrder from "./hook/useOrder"
 
 export default function App() {
-  const{ order ,addItem, removeItem, tip, setTip } = useOrder()
+  const{ order ,addItem, removeItem, tip, setTip , placeOrder } = useOrder()
   return(
   <>
     <header className=" bg-teal-400 py-5">
@@ -31,10 +31,12 @@ export default function App() {
         />
         <TipPercentageForm 
         setTip={setTip}
+        tip={tip}
         />
         <OrderTotals
-        tip={tip}
-        order={order}
+          placeOrder={placeOrder}
+          tip={tip}
+          order={order}
         />
       </div>
     </main>

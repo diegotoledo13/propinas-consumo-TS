@@ -19,11 +19,17 @@ export default function useOrder() {
      const removeItem = (id: MenuItem['id']) =>{
         setOrder(order.filter((orderItem) => orderItem.id !== id))
      }
+     const placeOrder = () => {
+        alert('Orden guardada')
+        setOrder([])
+        setTip(0)
+     }
     return {
         addItem,
         tip,
         setTip,
         order,
-        removeItem
+        removeItem,
+        placeOrder
     }
 }
